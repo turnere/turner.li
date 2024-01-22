@@ -1,5 +1,7 @@
 const YEAR = new Date().getFullYear();
 
+import { Tabs } from 'nextra/components'
+
 export default {
   footer: (
     <footer>
@@ -18,3 +20,4 @@ export default {
     </footer>
   ),
 };
+
