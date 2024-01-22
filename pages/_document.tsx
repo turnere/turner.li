@@ -4,7 +4,7 @@ export default function Document() {
   const meta = {
     title: "Eric Turner a'boot me",
     description: "Quick portfolio and resume and someday maybe other things like a PDF generator of my resume and more!",
-    image: "https://turner.li/public/images/eric-faces.png",
+    image: "https://turner.li/images/eric-faces.png",
   };
 
   return (
