@@ -10,25 +10,25 @@ async function generate() {
     feed_url: "https://turner.li/feed.xml",
   });
 
-  const posts = await fs.readdir(path.join(__dirname, "..", "pages"));
+  const posts = await fs.readdir(path.join(__dirname, "..", "pages", "posts"));
 
   await Promise.all(
     posts.map(async (name) => {
       if (name.startsWith("index.")) return;
 
       const content = await fs.readFile(
-        path.join(__dirname, "..", "pages", name),
+        path.join(__dirname, "..", "pages", "posts", name),
       );
       const frontmatter = matter(content);
 
-      /* feed.item({
+      feed.item({
         title: frontmatter.data.title,
         url: "/posts/" + name.replace(/\.mdx?/, ""),
         date: frontmatter.data.date,
         description: frontmatter.data.description,
         categories: frontmatter.data.tag.split(", "),
         author: frontmatter.data.author,
-      }); */
+      });
     }),
   );
 
